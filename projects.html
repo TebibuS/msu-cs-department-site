@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f1fa;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #49306e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+    }
+
+    .navbar .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .hero-image-slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(73, 48, 110, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 30%;
+    }
+
+    h1, h2 {
+      color: #49306e;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .career-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
+
+    .career-list {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .career-list li {
+      background-color: #fafafa;
+      padding: 12px 16px;
+      border-left: 5px solid #febd11;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+
+    .testimonial-wrapper {
+      margin-top: 60px;
+    }
+
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .testimonial-card {
+  background-color: #49306e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 45%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+    .testimonial-card img {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background-color: #febd11;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #e3a900;
+    }
+    .gold-heading {
+  color:  #febd11 !important;   /* <-- Force it to override any other style */
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* optional */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+        <img src="Pictures/Screenshot 2025-04-10 150956.png" alt="MSU Logo" style="height: 100px;">
+        
+      </a>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="Careers.html">Careers</a></li>
+      <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section with Slideshow -->
+  <header class="hero">
+    <div class="hero-image-slideshow">
+      <img src="Pictures/Screenshot (690).png" class="slide active" alt="Project Slide 1" />
+      <img src="Pictures/Screenshot (693).png" class="slide" alt="Project Slide 2" />
+      <img src="Pictures/Screenshot (694).png" class="slide" alt="Project Slide 3" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="gold-heading">Real Companies. Real Impact.</h1>
+
+
+      <p>
+        Each semester, our students collaborate with companies like <strong>BBB</strong>, <strong>Mayo Clinic</strong>,
+        <strong>SAFEHR</strong>, and <strong>Intuilize</strong> to deliver impactful, real-world tech solutions.
+      </p>
+    </div>
+  </header>
+
+  <!-- Project-Based Learning -->
+  <section class="container" data-aos="fade-up">
+    <h2>Project-Based Learning</h2>
+    <p>
+      Through industry sponsored projects, students take on the role of software engineers—meeting with clients, writing
+      code, and deploying systems. This hands-on experience is more than a class—it's a launchpad into your tech career.
+    </p>
+
+    <!-- Careers in This Field -->
+    <section class="career-section container" data-aos="fade-up">
+      <h2>Careers in This Field</h2>
+      <ul class="career-list">
+        <li>Data Scientist</li>
+        <li>Machine Learning Expert</li>
+        <li>Data Engineer</li>
+        <li>Software Engineer</li>
+        <li>Database Developer</li>
+        <li>Cloud Computing Developer</li>
+        <li>Roboticist</li>
+        <li>Network Architect</li>
+        <li>Software Architect</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <div class="testimonial-wrapper">
+      <h2>Testimonials</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="Pictures/BBB.png" alt="BBB Logo" />
+          <p>
+            “We appreciate the CS Department’s innovative solutions that help businesses across the region.
+            Their students consistently deliver professional-grade work.”
+          </p>
+          <h4>- Better Business Bureau</h4>
+        </div>
+        <div class="testimonial-card">
+          <img src="Pictures/Mayo.png" alt="Mayo Clinic Logo" />
+          <p>
+            “Collaborating with these students on cutting-edge healthcare software was invaluable.
+            Their fresh perspectives and technical skills are truly impressive.”
+          </p>
+          <h4>- Mayo Clinic</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS & Slideshow Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --msu-purple: #49306e;
+  --msu-gold: #febd11;
+  --background-light: #F2F1F9;
+  --container-bg: #fff;
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--msu-purple);
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--msu-gold);
+  transform: scale(1.05);
+}
+
+/* Hero Section (MSU Style) */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 48, 110, 0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--msu-gold);
+  color: var(--msu-purple);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #e6aa00;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: var(--msu-purple);
+}
+
+.btn-secondary:hover {
+  background-color: #f0eaea;
+}
+
+/* Container & Card Layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: var(--container-bg);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form .btn {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: var(--msu-purple);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer .social-media {
+  margin-top: 10px;
+}
+
+footer .social-media a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+  color: var(--msu-gold);
+}
+.program-cards-section {
+  background-color: #f4f2fa;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  color: var(--msu-purple);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.program-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card h3 {
+  color: var(--msu-purple);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 1rem;
+  color: #444;
+}
+.program-cards {
+  margin-top: 60px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.program-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  color: var(--msu-purple);
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  color: var(--text-color);
+  font-size: 1em;
+}
+.inside-program-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 60px;
+}
+
+.inside-program-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--msu-purple);
+}
+
+.inside-program-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.insight-card {
+  background-color: #f9f8fd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.insight-card:hover {
+  transform: translateY(-5px);
+}
+
+.insight-card h3 {
+  color: var(--msu-purple);
+  margin-bottom: 10px;
+}
+
+.insight-card p {
+  color: #444;
+  font-size: 1rem;
+}
+
+.insight-card em {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
+.project-description-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.project-description-box p {
+  margin-bottom: 20px;
+}
+
+.project-description-box strong {
+  color: var(--msu-purple);
+}
+.hero-image-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-image-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;        /* This is important */
+  object-fit: cover;   /* Ensures the image fills while maintaining aspect ratio */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-image-slideshow img.active {
+  opacity: 1;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-image-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  background-color: rgba(73, 48, 110, 0.65);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.testimonial-wrapper {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-top: 40px;
+}
+
+.testimonial-wrapper h2 {
+  color: var(--msu-purple);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.testimonial-card img {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+  color: var(--msu-purple);
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #49306e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.contact-form button:hover {
+  background-color: #341e4c;
+}
+
+.semester-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+}
+
+.semester-card h3 {
+  margin-bottom: 10px;
+  color: #49306e; /* MSU Purple */
+}
+
+.semester-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.semester-card li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #49306e;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  background-color: #febd11;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 1rem; /* This ensures space between the paragraph and button */
+  text-decoration: none;
+}
+.video-container {
+  max-width: 640px;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 315px;
+  border: none;
+}
+.career-section {
+  margin-top: 60px;
+  padding: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.career-section h2 {
+  color: #49306e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.career-list {
+  list-style-type: disc;
+  padding-left: 25px;
+  font-size: 1.1rem;
+  color: #1e144f;
+  line-height: 1.8;
+}
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.faculty-member {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-header {
+  padding: 15px;
+  text-align: center;
+  background-color: #eae7f2;
+  color: #49306e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faculty-header img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.faculty-details {
+  padding: 0 15px 15px;
+  display: none;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.faculty-member.open .faculty-details {
+  display: block;
+}
+.program-cards-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.program-cards-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.program-cards-background .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.program-cards-background .slide.active {
+  opacity: 1;
+}
+
+.program-cards {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+  background: rgba(73, 48, 110, 0.95); /* Maverick Purple with overlay */
+}
+.hero {
+  position: relative;
+  height: 100vh; /* Full screen */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(73, 48, 110, 0.6); /* MSU Purple, semi-transparent */
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+  background: #febd11; /* Maverick Gold */
+  color: #2c2c2c;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.section-divider {
+  height: 60px;
+  background: linear-gradient(to right, #49306e, #febd11);
+  margin: 60px auto 40px;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.insights-list {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  list-style: none;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.insights-list li {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 6px solid #febd11;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.insight-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: #49306e;
+}
+.semester-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.semester-column {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.info-note {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #49306e;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.dropdown-header::after {
+  content: "▼ More Info";
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #49306e;
+  margin-left: 10px;
+}
+.section-divider {
+  border: none;
+  height: 2px;
+  background: #ccc;
+  margin: 60px auto;
+  max-width: 80%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.gold-heading {
+  color: #febd11 !important;  /* <-- Force it to override any other style */
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* optional */
+}

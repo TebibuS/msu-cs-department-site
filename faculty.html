@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: #49306e;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 {
+      color: #49306e;
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .faculty-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-5px);
+      background: #f2eafc;
+    }
+
+    .faculty-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #febd11;
+    }
+
+    .faculty-card h3 {
+      margin: 10px 0 0;
+      color: #49306e;
+    }
+
+    .faculty-card p.click-hint {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+
+    .faculty-info {
+      display: none;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .faculty-card.active .faculty-info {
+      display: block;
+    }
+
+    #contact {
+      background: #fff3e0;
+    }
+
+    #contact h2, #contact p {
+      color: #4a148c;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form .btn {
+      background: #49306e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form .btn:hover {
+      background: #351f53;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+        <img src="Pictures/Screenshot 2025-04-10 150956.png" alt="MSU Logo" style="height: 100px;">
+        
+      </a>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="Careers.html">Careers</a></li>
+      <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+    </ul>
+  </nav>
+
+  <h2>Faculty & Staff Directory</h2>
+
+  <section class="faculty-grid" data-aos="fade-up">
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/RD.png" alt="Rushit Dave">
+      <h3>Rushit Dave</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Program Director & Assistant Professor</p>
+        <p><strong>Office:</strong> WH229</p>
+        <p><strong>Phone:</strong> 507-389-5310</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Rebecca.png" alt="Rebecca Bates">
+      <h3>Rebecca Bates (Becky)</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Professor</p>
+        <p><strong>Office:</strong> WH231</p>
+        <p><strong>Phone:</strong> 507-389-5587</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Ryne.png" alt="Ryne Leytem">
+      <h3>Ryne Leytem</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Adjunct Faculty</p>
+        <p><strong>Office:</strong> Carkoski Commons</p>
+        <p><strong>Phone:</strong> 507-740-0464</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Flint.png" alt="Flint Million">
+      <h3>Flint Million</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Assistant Professor</p>
+        <p><strong>Office:</strong> WH223</p>
+        <p><strong>Phone:</strong> 507-389-1568</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Mansi.png" alt="Mansi Bhavsar">
+      <h3>Mansi Bhavsar</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Assistant Professor</p>
+        <p><strong>Office:</strong> WH221</p>
+        <p><strong>Phone:</strong> 507-389-5311</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Peg.png" alt="Peg Burr">
+      <h3>Peg Burr</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Project Coach</p>
+        <p><strong>Location:</strong> Chicago, IL</p>
+      </div>
+    </div>
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Emily.png" alt="Emily Gresbrink">
+      <h3>Emily Gresbrink</h3>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        <p>Assistant Professor, Technical Communication</p>
+        <p><strong>Office:</strong> Wissink Hall</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container" data-aos="fade-up" style="text-align:center; padding: 40px; background: #49306e;">
+    <h2 style="color: #fff;">Get in Touch</h2>
+    <p style="color: #ffd700; font-weight: 600;">
+      Have questions about our faculty or programs? Reach out we’d love to hear from you!
+    </p>
+    <form class="contact-form" style="max-width: 500px; margin: auto;">
+      <input type="text" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0; border-radius: 6px; border: none;">
+      <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0; border-radius: 6px; border: none;">
+      <textarea placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0; border-radius: 6px; border: none;"></textarea>
+      <button type="submit" class="btn" style="background: #febd11; color: #49306e; border: none; padding: 10px 20px; font-weight: 600; border-radius: 6px;">Send Message</button>
+    </form>
+  </section>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

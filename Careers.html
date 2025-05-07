@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real Client Projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    :root {
+      --maverick-purple: #49306e;
+      --maverick-gold: #febd11;
+      --light-grey: #f4f4f6;
+      --soft-white: #ffffff;
+      --section-divider: #e5e4e9;
+    }
+  
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: #2c2c2c;
+    }
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background: var(--maverick-purple);
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+  
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+  
+    .nav-links a:hover {
+      color: var(--maverick-gold);
+    }
+  
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .hero {
+      position: relative;
+      height: 300px;
+      background: url('Pictures/TS.png') center/cover no-repeat;
+    }
+  
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(73, 48, 110, 0.6);
+    }
+  
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+  
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  
+    .inside-program-box {
+  background: #f0f0f3; /* light gray background */
+  margin: 60px auto 0;
+  max-width: 1200px;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #4b286d; /* Maverick Purple accent */
+}
+
+  
+.inside-program-box h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ffbd17; /* Maverick Gold */
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+  
+    .video-container {
+      
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  
+    .video-container iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+      border-radius: 10px;
+    }
+  
+    .semester-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(73, 48, 110, 0.1);
+}
+
+.semester-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.semester-column {
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.semester-column:hover {
+  transform: translateY(-4px);
+  background-color: #fff8e1; /* Soft gold tint */
+}
+
+.dropdown-header {
+  background: #4b286d; /* Maverick Purple */
+  color: white;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.dropdown-header:hover {
+  background-color: #391d50;
+}
+
+.dropdown-header::after {
+  content: "▼ More Info";
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffbd17; /* Maverick Gold */
+}
+
+.project-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+  padding: 20px;
+  background: #fffefc;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.project-card {
+  background: #fff;
+  border-left: 5px solid #ffbd17; /* Gold highlight */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.project-company {
+  color: #4b286d;
+  font-weight: bold;
+}
+
+.project-title {
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.example-card {
+  background-color: #f6f2fb;
+  color: #4b286d;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+  
+    .active-grid {
+      display: grid !important;
+    }
+  </style>
+  
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Pictures/Screenshot 2025-04-10 150956.png" alt="MSU Logo" style="height: 100px;" />
+     
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="Careers.html">Careers</a></li>
+      <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Real Client Projects</h1>
+      <p>Click a semester below to explore semester-based collaborations.</p>
+    </div>
+  </header>
+
+  <!-- Inside the Program -->
+  <section class="inside-program-box" data-aos="fade-up">
+    <h2>Inside the Program</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/ZO4t5lKbc1A" 
+        title="Computer Science Program at Minnesota State University, Mankato"
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <hr class="section-divider">
+    
+   
+
+
+    <!-- Semesters -->
+  <main class="semester-section">
+    <div class="semester-grid">
+
+      <!-- Fall 2023 -->
+      <div class="semester-column" data-aos="fade-up">
+        <div class="dropdown-header" onclick="toggleProjects(this)">
+          Fall 2023 <span class="info-note"></span>
+    
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card"><div class="project-company">BBB</div><div class="project-title">BBB Data Management System</div></div>
+          <div class="project-card"><div class="project-company">Mayo Clinic</div><div class="project-title">TCU Post-Hospitalization Placer Tool</div></div>
+          <div class="project-card"><div class="project-company">Impekable</div><div class="project-title">AI Email Writer</div></div>
+          <div class="project-card"><div class="project-company">MNSU</div><div class="project-title">Enrollment Projection Tool</div></div>
+          <div class="project-card"><div class="project-company">Historical Learning</div><div class="project-title">Interactive Avatar System</div></div>
+          <div class="project-card"><div class="project-company">NextGen RF</div><div class="project-title">GUI Updates</div></div>
+          <div class="example-card">...and more projects not listed here.</div>
+        </div>
+      </div>
+
+      <!-- Spring 2024 -->
+      <div class="semester-column" data-aos="fade-up">
+        <div class="dropdown-header" onclick="toggleProjects(this)">
+          Spring 2024 <span class="info-note"></span>
+         
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card"><div class="project-company">BBB</div><div class="project-title">The Data Gets Better and Better</div></div>
+          <div class="project-card"><div class="project-company">Mayo Clinic</div><div class="project-title">Infusion Center Scheduler</div></div>
+          <div class="project-card"><div class="project-company">Mayo Clinic</div><div class="project-title">Wayfinding App</div></div>
+          <div class="project-card"><div class="project-company">Intuilize</div><div class="project-title">ML for Customer Segmentation</div></div>
+          <div class="project-card"><div class="project-company">MSU</div><div class="project-title">Student Government App</div></div>
+          <div class="project-card"><div class="project-company">UW Madison</div><div class="project-title">Tool for Embodied Learning</div></div>
+          <div class="example-card">...and more projects not listed here.</div>
+        </div>
+      </div>
+
+      <!-- Fall 2024 -->
+      <div class="semester-column" data-aos="fade-up">
+        <div class="dropdown-header" onclick="toggleProjects(this)">
+          Fall 2024 <span class="info-note"></span>
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card"><div class="project-company">Navitor</div><div class="project-title">Project Deliverables</div></div>
+          <div class="project-card"><div class="project-company">Nubric</div><div class="project-title">Project Description System</div></div>
+          <div class="project-card"><div class="project-company">Senal Falcon</div><div class="project-title">Smart Sensor Platform</div></div>
+          <div class="project-card"><div class="project-company">Flint Guario</div><div class="project-title">Service Portal</div></div>
+          <div class="project-card"><div class="project-company">MSU</div><div class="project-title">Student Government App</div></div>
+          <div class="project-card"><div class="project-company">UW Madison</div><div class="project-title">Embodied Learning Research</div></div>
+          
+          <div class="example-card">...and more projects not listed here.</div>
+        </div>
+      </div>
+
+      <!-- Spring 2025 -->
+      <div class="semester-column" data-aos="fade-up">
+        <div class="dropdown-header" onclick="toggleProjects(this)">
+          Spring 2025 <span class="info-note"></span>
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card"><div class="project-company">BBB</div><div class="project-title">Project Dashboard & Deliverables</div></div>
+          <div class="project-card"><div class="project-company">Eaton LLC</div><div class="project-title">Embedded Monitoring Tool</div></div>
+          <div class="project-card"><div class="project-company">Bytepipe</div><div class="project-title">GNU Radio Integration</div></div>
+          <div class="project-card"><div class="project-company">Intuilize</div><div class="project-title">Customer Tier Movement Predictor</div></div>
+          <div class="project-card"><div class="project-company">BT Towne</div><div class="project-title">Automation Monitoring</div></div>
+          <div class="project-card"><div class="project-company">Senal Falcon</div><div class="project-title">Sensor Platform Spring Update</div></div>
+          <div class="project-card"><div class="project-company">MSU</div><div class="project-title">Portfolio Site | Student Government</div></div>
+          <div class="project-card"><div class="project-company">UW Madison</div><div class="project-title">Embodied Learning Tool</div></div>
+          <div class="project-card"><div class="project-company">Science Fair</div><div class="project-title">Research Proposal Project</div></div>
+          <div class="example-card">...and more projects not listed here.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+    function toggleProjects(header) {
+      const grid = header.nextElementSibling;
+      grid.classList.toggle("active-grid");
+    }
+  </script>
+</body>
+</html>
