@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Science Major Requirements</title>
+  <!-- Enhanced Styles for a More Professional Layout -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+
+    :root {
+      --maverick-purple: #49306e;
+      --maverick-gold: #febd11;
+      --light-grey: #f4f4f6;
+      --soft-white: #ffffff;
+      --section-bg-odd: #ffffff;
+      --section-bg-even: #fcfcfd;
+      --card-shadow: rgba(0, 0, 0, 0.08);
+      --divider-color: #e0e0e5;
+      --heading-font: 'Kanit', sans-serif;
+      --body-font: 'Kanit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--light-grey);
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px,40px;
+      background: #49306e;
+      color: white;
+    }
+
+    .navbar .logo img {
+      height: 100px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: rgba(237, 235, 235, 0.9);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--maverick-gold);
+    }
+
+   
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 250px;
+      background: url('Pictures/TS.png') center/cover no-repeat;
+      margin-bottom: 60px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 2;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+     color: #ffffff !important;
+     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+
+    /* Page Wrapper */
+    .content-wrapper {
+      max-width: 900px;
+      /* Remove negative top margin; add positive gap of 40px below the hero */
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* Main Title */
+    h1.page-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.4rem;
+      color: var(--maverick-purple);
+      font-family: var(--heading-font);
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 50px;
+      padding: 30px 25px;
+      background-color: var(--section-bg-odd);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      position: relative;
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--section-bg-even);
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: var(--maverick-gold);
+      text-transform: uppercase;
+      border-bottom: 3px solid var(--maverick-gold);
+      padding-bottom: 8px;
+      font-family: var(--heading-font);
+    }
+
+    /* Divider between sections */
+    .section-divider {
+      height: 2px;
+      width: 60px;
+      background-color: var(--divider-color);
+      margin: 30px auto 0;
+    }
+    .section-title {
+      color: #492365; /* Text color */
+      border-bottom: 3px solid #FFB511; /* Optional underline */
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+
+
+    /* Course List Cards */
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: var(--soft-white);
+      border-radius: 6px;
+      padding: 15px 18px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px var(--card-shadow);
+    }
+
+    .course-code {
+      flex-shrink: 0;
+      background: var(--maverick-purple);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .course-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-info span {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .credit {
+      color: #777;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .note {
+      font-size: 0.92rem;
+      color: #555;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* Eligibility & Minor Sections (Text Styling) */
+    .content-wrapper section p {
+      font-size: 1rem;
+      color: #444;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .course-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Pictures/Screenshot 2025-04-10 150956.png" alt="MSU Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="Ourstudents.html">Eligibility</a></li>
+      <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+      <li><a href="apply.html" class="active">Apply Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Computer Science Major Requirements</h1>
+      <p>Your roadmap to success in the CIS program</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <!-- Page Title -->
+    <h1 class="page-title">Major Requirements Overview</h1>
+
+    <!-- CIS Core Courses -->
+    <section>
+      <h2>CIS Core Courses</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">CIS 121</div>
+          <div class="course-info">
+            <span>Introduction to Programming</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 122</div>
+          <div class="course-info">
+            <span>Data Structures</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 223</div>
+          <div class="course-info">
+            <span>Algorithms</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 224</div>
+          <div class="course-info">
+            <span>Computer Architecture</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- General Education Courses -->
+    <section>
+      <h2>General Education Courses</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">ENG 101</div>
+          <div class="course-info">
+            <span>Foundations of Writing &amp; Rhetoric</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">COMM 102</div>
+          <div class="course-info">
+            <span>Public Speaking</span>
+            <span class="credit">3 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Science Courses (Choose 8–9 Credits) -->
+    <section>
+      <h2>Science Courses (Choose 8–9 Cr)- ANY TWO</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">BIOL 105</div>
+          <div class="course-info">
+            <span>General Biology I</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">BIOL 106</div>
+          <div class="course-info">
+            <span>General Biology II</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CHEM 201</div>
+          <div class="course-info">
+            <span>General Chemistry I</span>
+            <span class="credit">5 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CHEM 202</div>
+          <div class="course-info">
+            <span>General Chemistry II</span>
+            <span class="credit">5 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">GEOL 121</div>
+          <div class="course-info">
+            <span>Physical Geology</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">PHYS 221</div>
+          <div class="course-info">
+            <span>General Physics I</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">PHYS 222</div>
+          <div class="course-info">
+            <span>General Physics II</span>
+            <span class="credit">3 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">PHYS 223</div>
+          <div class="course-info">
+            <span>General Physics III</span>
+            <span class="credit">3 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">PHYS 223 Lab</div>
+          <div class="course-info">
+            <span>Physics II Laboratory</span>
+            <span class="credit">1 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">PHYS 233 Lab</div>
+          <div class="course-info">
+            <span>Physics III Laboratory</span>
+            <span class="credit">1 Cr</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">
+        * PHYS 222 &amp; PHYS 232 must be taken together.<br />
+        * PHYS 223 &amp; PHYS 233 must be taken together.
+      </p>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Math Courses (Lower Division) -->
+    <section>
+      <h2>Math Courses (Lower Division)</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">MATH 121</div>
+          <div class="course-info">
+            <span>Calculus I</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">MATH 122</div>
+          <div class="course-info">
+            <span>Calculus II</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">MATH 247</div>
+          <div class="course-info">
+            <span>Linear Algebra I</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">MATH 280</div>
+          <div class="course-info">
+            <span>Discrete Mathematics I</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+
+    <!-- Eligibility -->
+    <section >
+      <h2 class="section-title">Eligibility for Upper Division</h2>
+      <p>
+        To declare the upper-division CIS major, students must:<br>
+        &mdash; Complete all lower-division CIS Core, General Education, Science, and Math requirements listed above.<br>
+        &mdash; Maintain a minimum GPA (per department policy).<br>
+        &mdash; Fulfill any additional departmental prerequisites.<br>
+        &mdash; To get into the upper-division program, the above-given criteria should be fulfilled. For more information, <a href="apply.html">click here</a>.
+
+      </p>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Upper Division Placeholder -->
+    <section >
+      <h2 class="section-title">Upper Division CIS Courses</h2>
+      <p>
+        (This section is reserved for detailed descriptions of 300- and 400-level CS courses once admitted. Consult the CS department for specific requirements and course offerings.)
+      </p>
+    </section>
+
+    <!-- CS Core Courses (Upper Division) -->
+    <section>
+      <h2>CIS Core Courses (Upper Division)</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">CIS 301</div>
+          <div class="course-info">
+            <span>Operating Systems</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 302</div>
+          <div class="course-info">
+            <span>Software Engineering &amp; Parallel Computing</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 303</div>
+          <div class="course-info">
+            <span>Programming Language Concepts</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CIS 304</div>
+          <div class="course-info">
+            <span>Databases &amp; Information Security</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Math Courses (Upper Division) -->
+    <section>
+      <h2>Math Courses (Upper Division)</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">MATH 380</div>
+          <div class="course-info">
+            <span>Discrete Mathematics II</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">MATH 354</div>
+          <div class="course-info">
+            <span>Probability &amp; Statistics</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- CS Electives (Choose 12 Credits) -->
+    <section>
+      <h2>CS Electives (Choose 12 Cr)</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">CS 306</div>
+          <div class="course-info">
+            <span>Network Architectures</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 308</div>
+          <div class="course-info">
+            <span>Applied Algorithms</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 401</div>
+          <div class="course-info">
+            <span>Topics in Operating Systems</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 406</div>
+          <div class="course-info">
+            <span>Topics in Programming Languages</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 410</div>
+          <div class="course-info">
+            <span>Topics in Algorithms &amp; Computability</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 415</div>
+          <div class="course-info">
+            <span>Topics in Parallel &amp; Distributed Computing</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 420</div>
+          <div class="course-info">
+            <span>Topics in Architecture &amp; Organization</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 435</div>
+          <div class="course-info">
+            <span>Topics in Intelligent Systems</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 440</div>
+          <div class="course-info">
+            <span>Topics in Information Management</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 445</div>
+          <div class="course-info">
+            <span>Topics in Information Assurance &amp; Security</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 450</div>
+          <div class="course-info">
+            <span>Topics in Computational Science</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 465</div>
+          <div class="course-info">
+            <span>Topics in Graphics &amp; Visualization</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 470</div>
+          <div class="course-info">
+            <span>Topics in Human-Computer Interaction</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 480</div>
+          <div class="course-info">
+            <span>Topics in Software Engineering</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 485</div>
+          <div class="course-info">
+            <span>Topics in Platform-Based Development</span>
+            <span class="credit">2 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Project Courses -->
+    <section>
+      <h2>Project Courses</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">CS 391W</div>
+          <div class="course-info">
+            <span>Computer Science Project 1</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 392W</div>
+          <div class="course-info">
+            <span>Computer Science Project 2</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 491W</div>
+          <div class="course-info">
+            <span>Computer Science Capstone 1</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">CS 492W</div>
+          <div class="course-info">
+            <span>Computer Science Capstone 2</span>
+            <span class="credit">4 Cr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Seminar Courses -->
+    <section>
+      <h2>Seminar Courses</h2>
+      <div class="course-list">
+        <div class="course-card">
+          <div class="course-code">CS 495</div>
+          <div class="course-info">
+            <span>Computer Science Seminar (1 Cr/Semester)</span>
+            <span class="credit">4 Cr Total</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    
+    <div class="section-divider"></div>
+
+    <!-- Minor in Mathematics -->
+    <section>
+      <h2>Minor in Mathematics</h2>
+      <p>
+        Students completing the CS major requirements may also pursue a Minor in Mathematics by fulfilling additional math-minor coursework as specified by the Mathematics department.
+      </p>
+    </section>
+  </div>
+
+</body>
+</html>

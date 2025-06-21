@@ -27,18 +27,19 @@
       list-style: none;
       display: flex;
       gap: 20px;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-links a {
-      color: white;
+      color: rgb(237, 235, 235);
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .logo img {
+      height: 60px;
     }
 
     h2 {
@@ -54,6 +55,7 @@
       max-width: 1200px;
       margin: auto;
       padding: 0 20px 60px;
+      align-items: center;
     }
 
     .faculty-card {
@@ -64,6 +66,8 @@
       text-align: center;
       transition: transform 0.2s;
       cursor: pointer;
+      align-self: center;
+      
     }
 
     .faculty-card:hover {
@@ -84,6 +88,12 @@
       margin: 10px 0 0;
       color: #49306e;
     }
+    .faculty-card.center-me {
+  
+      grid-column: 1 / -1;
+  
+      justify-self: center;
+   }
 
     .faculty-card p.click-hint {
       font-size: 0.85rem;
@@ -144,8 +154,9 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="Careers.html">Careers</a></li>
+      <li><a href="Ourstudents.html">Eligibility</a></li>
       <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+      <li><a href="apply.html" class="active">Apply Now</a></li>
     </ul>
   </nav>
 
@@ -155,77 +166,97 @@
     <div class="faculty-card" onclick="this.classList.toggle('active')">
       <img src="Pictures/RD.png" alt="Rushit Dave">
       <h3>Rushit Dave</h3>
+      <p>Associate Professor</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Program Director & Assistant Professor</p>
+        
         <p><strong>Office:</strong> WH229</p>
         <p><strong>Phone:</strong> 507-389-5310</p>
       </div>
     </div>
-
     <div class="faculty-card" onclick="this.classList.toggle('active')">
       <img src="Pictures/Rebecca.png" alt="Rebecca Bates">
       <h3>Rebecca Bates (Becky)</h3>
+      <p>Professor</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Professor</p>
+        
         <p><strong>Office:</strong> WH231</p>
         <p><strong>Phone:</strong> 507-389-5587</p>
       </div>
     </div>
 
     <div class="faculty-card" onclick="this.classList.toggle('active')">
-      <img src="Pictures/Ryne.png" alt="Ryne Leytem">
-      <h3>Ryne Leytem</h3>
+      <img src="Pictures/jonathan.jpg" alt="Dr. Jonathan Hardwick">
+      <h3>Dr. Jonathan Hardwick</h3>
+      <p>Associate Professor</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Adjunct Faculty</p>
-        <p><strong>Office:</strong> Carkoski Commons</p>
-        <p><strong>Phone:</strong> 507-740-0464</p>
+        
+        <p><strong>Office:</strong> Wissink Hall</p>
       </div>
     </div>
 
-    <div class="faculty-card" onclick="this.classList.toggle('active')">
-      <img src="Pictures/Flint.png" alt="Flint Million">
-      <h3>Flint Million</h3>
-      <p class="click-hint">Click to expand ↓</p>
-      <div class="faculty-info">
-        <p>Assistant Professor</p>
-        <p><strong>Office:</strong> WH223</p>
-        <p><strong>Phone:</strong> 507-389-1568</p>
-      </div>
-    </div>
+
 
     <div class="faculty-card" onclick="this.classList.toggle('active')">
       <img src="Pictures/Mansi.png" alt="Mansi Bhavsar">
       <h3>Mansi Bhavsar</h3>
+      <p>Assistant Professor</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Assistant Professor</p>
+        
         <p><strong>Office:</strong> WH221</p>
         <p><strong>Phone:</strong> 507-389-5311</p>
       </div>
     </div>
 
+
+    
+
+    
+
+
     <div class="faculty-card" onclick="this.classList.toggle('active')">
-      <img src="Pictures/Peg.png" alt="Peg Burr">
-      <h3>Peg Burr</h3>
+      <img src="Pictures/Flint.png" alt="Flint Million">
+      <h3>Flint Million</h3>
+      <p>Assistant Professor</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Project Coach</p>
-        <p><strong>Location:</strong> Chicago, IL</p>
+        
+        <p><strong>Office:</strong> WH223</p>
+        <p><strong>Phone:</strong> 507-389-1568</p>
       </div>
     </div>
+
+
+
+    
 
     <div class="faculty-card" onclick="this.classList.toggle('active')">
       <img src="Pictures/Emily.png" alt="Emily Gresbrink">
       <h3>Emily Gresbrink</h3>
+      <p>Assistant Professor, Technical Communication</p>
       <p class="click-hint">Click to expand ↓</p>
       <div class="faculty-info">
-        <p>Assistant Professor, Technical Communication</p>
+        
         <p><strong>Office:</strong> Wissink Hall</p>
       </div>
     </div>
+
+
+    <div class="faculty-card" onclick="this.classList.toggle('active')">
+      <img src="Pictures/Ryne.png" alt="Ryne Leytem">
+      <h3>Ryne Leytem</h3>
+      <p>Adjunct Faculty</p>
+      <p class="click-hint">Click to expand ↓</p>
+      <div class="faculty-info">
+        
+        <p><strong>Office:</strong> Carkoski Commons</p>
+        <p><strong>Phone:</strong> 507-740-0464</p>
+      </div>
+    </div>
+    
   </section>
 
   <section id="contact" class="container" data-aos="fade-up" style="text-align:center; padding: 40px; background: #49306e;">

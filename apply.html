@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Now - Computer Science</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+
+    :root {
+      --maverick-purple: #49306e;
+      --maverick-gold: #febd11;
+      --light-grey: #f4f4f6;
+      --soft-white: #ffffff;
+      --section-bg-odd: #ffffff;
+      --section-bg-even: #fcfcfd;
+      --card-shadow: rgba(0, 0, 0, 0.08);
+      --divider-color: #e0e0e5;
+      --heading-font: 'Kanit', sans-serif;
+      --body-font: 'Kanit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--light-grey);
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: #49306e;
+      color: white;
+    }
+
+    .navbar .logo img {
+      height: 100px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: rgba(237, 235, 235, 0.9);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--maverick-gold);
+    }
+    
+    /* Active Nav Link Style */
+    
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 250px;
+      background: url('pictures/Screenshot\ 2025-04-10\ 204859.png') center/cover no-repeat;
+      margin-bottom: 60px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 2;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+     color: #ffffff !important;
+     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+
+    /* Page Wrapper */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* Main Title */
+    h1.page-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.4rem;
+      color: var(--maverick-purple);
+      font-family: var(--heading-font);
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 50px;
+      padding: 30px 25px;
+      background-color: var(--section-bg-odd);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      position: relative;
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--section-bg-even);
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: var(--maverick-purple);
+      text-transform: uppercase;
+      border-bottom: 3px solid var(--maverick-gold);
+      padding-bottom: 8px;
+      font-family: var(--heading-font);
+    }
+
+    /* Divider between sections */
+    .section-divider {
+      height: 2px;
+      width: 60px;
+      background-color: var(--divider-color);
+      margin: 30px auto 0;
+    }
+    
+    /* General content styling */
+    section p {
+        margin-bottom: 15px;
+        color: #444;
+    }
+    
+    section ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    
+    section li {
+        margin-bottom: 12px;
+    }
+
+    section a {
+        color: var(--maverick-purple);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    section a:hover {
+        color: var(--maverick-gold);
+        text-decoration: underline;
+    }
+    
+    .highlight-box {
+        background-color: #fdfbf2;
+        border-left: 5px solid var(--maverick-gold);
+        padding: 20px;
+        margin-top: 25px;
+        border-radius: 5px;
+    }
+    
+    .highlight-box h3 {
+        color: var(--maverick-purple);
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Pictures/Screenshot 2025-04-10 150956.png" alt="MSU Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="Ourstudents.html">Eligibility</a></li>
+      <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+      <li><a href="apply.html" class="active">Apply Now</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Join Our Program</h1>
+      <p>Apply to the Upper-Division in Computer Science</p>
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+    
+    <section>
+      <h2>Program Overview</h2>
+      <p>
+        Computer Science welcomes new students to our innovative project-based program! Lower-division courses follow the common computing core shared among several technology-focused majors, complemented by courses that will earn you a minor in mathematics.
+      </p>
+      <p>
+        The upper-division program is where theory meets practice. Students work on a series of four significant, semester-long projects drawn from real-world industry challenges and cutting-edge research. You will typically collaborate in teams to complete projects and have the option of pursuing a senior thesis before graduation.
+      </p>
+    </section>
+    <div class="section-divider"></div>
+    
+    <section>
+        <h2>The Application Process</h2> 
+        <p>
+            Admission into the upper-division requires a formal application. First-year students should start by following the major's recommended <a href="pdfs/fouryearplan.pdf">four-year plan</a>.
+        </p>
+        <p>
+            <strong>Current Minnesota State Mankato Students:</strong> <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=xscRULQKq0ae9PrnSpIaf_0TruTK36tMp_OIwo8cwe1UNFRaQkdJMU05TlZaSjJVM1FaVTVROVg5MSQlQCN0PWcu">Apply with this form</a>.
+        </p>
+        <p>
+            <strong>Transfer Students:</strong> <a href="pdfs/apply.pdf">Apply with this application</a>.
+        </p>
+        
+        <h3>Application Materials</h3>
+        <p>You will be asked to include the following in your application:</p>
+        <ul>
+            <li>Unofficial transcript(s).</li>
+            <li>An essay (300-500 words) describing why you want to participate in this project-based Computer Science program.</li>
+            <li>An essay (300-500 words) describing how you will contribute to the learning communities that develop within our program.</li>
+            <li>Sample code (25-100 lines) from a personal project or your Algorithms class, with a brief description (under 100 words) of what the code does.</li>
+            <li>
+                Either one letter of recommendation addressing your ability to succeed in this program, or the name of a current College of Science, Engineering, & Technology faculty member you have spoken with about your interest.
+                <br><em>(It is strongly recommended that your recommender is a professor in math, science, or computing, or an industry mentor).</em>
+            </li>
+        </ul>
+        <p>Recommenders can send letters directly to Dr. Rushit Dave at <a href="mailto:rushit.dave@mnsu.edu">rushit.dave@mnsu.edu</a>.</p>
+    </section>
+    <div class="section-divider"></div>
+    
+    <section>
+        <h2>Learn More at an Info Session</h2>
+        <p>
+            Want to learn more about the project-based Computer Science program and how to build a strong application? Please join us for a fun and interactive information/advising session. No need to reserve a spot, just come on in!
+        </p>
+        <div class="highlight-box">
+            <h3>Upcoming Sessions</h3>
+            <p><strong>Location:</strong> Wissink Hall 289</p>
+            <ul>
+                <li>Monday, March 17th, 6:00-7:00 pm</li>
+                <li>Thursday, March 20th, 6:00-7:00 pm</li>
+            </ul>
+        </div>
+        <p style="margin-top: 20px;">
+            Any questions? Please email Dr. Rushit Dave at <a href="mailto:rushit.dave@mnsu.edu">rushit.dave@mnsu.edu</a>. We look forward to seeing you!
+        </p>
+    </section>
+    <div class="section-divider"></div>
+    
+    <section>
+        <h2>Application Deadlines</h2>
+        <p>
+            Applications for <strong>Fall 2025</strong> entry into the Computer Science upper-division program are due <strong>March 24, 2025</strong>.
+        </p>
+        <p>
+            Applications will be accepted after this date, but admission for late applicants will be granted only on a space-available basis.
+        </p>
+    </section>
+
+  </div>
+
+</body>
+</html>
